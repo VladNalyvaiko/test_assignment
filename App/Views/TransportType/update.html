@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+<!-- welcome by using bootstrap -->
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to Dabour </h1>
+</div>
+<div>
+    <div class="container text-primary col-sm-9">
+
+        <form action="/transportType/update" method="POST" id="formSignup">
+            <input type="hidden" name="id" value="{{ item.id }}">
+            <div class="form-group row">
+                <label for="inputName" class="col-form-label">Назва типу транспотру</label>
+                <input type="text" class="form-control" id="inputName" name="name" value="{{ item.name }}">
+            </div>
+            <div class="form-group row">
+                <button type="submit" class="btn btn-primary">Зберегти</button>
+            </div>
+        </form>
+    
+    
+    </div>
+</div>
+
+{% endblock %}

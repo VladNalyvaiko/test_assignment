@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<!-- write the signup word-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Signup</h1>
+        </div>
+    </div>
+</div>
+
+<!-- get the error form the user object-->
+{% if errors %}
+<div class="alert alert-danger">
+    <p>Erorrs</p>
+    <ul>
+        <li>{{ errors }}</li>
+    </ul>
+</div>
+{% endif %}
+
+
+<div class="container text-primary col-sm-9">
+
+    <form action="/signup" method="post" id="formSignup">
+        <div class="form-group row">
+            <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+            <input type="text" class="form-control" id="inputName" name="name" value="{{ data.name }}">
+        </div>
+        <div class="form-group row">
+            <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+            <input type="text" class="form-control" id="inputEmail" name="email" value="{{ data.email }}">
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword" name="password" value="{{ data.password }}">
+        </div>
+        <div class="form-group row">
+            <button type="submit" class="btn btn-primary">Signup</button>
+        </div>
+
+    </form>
+
+
+</div>
+
+
+{% endblock %}
